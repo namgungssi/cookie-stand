@@ -19,3 +19,7 @@ header {
 p {
   font-size: 200%;
 }
+
+title {
+  position: sticky;
+}
