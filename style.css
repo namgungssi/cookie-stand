@@ -21,5 +21,6 @@ p {
 }
 
 title {
-  position: sticky;
+  position: relative;
+  text-align: center;
 }
