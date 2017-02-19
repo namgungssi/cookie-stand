@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>Brian's Salmon Cookies</title>
     <link rel='stylesheet' type='text/css' href='style.css'>
-
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <link rel='stylesheet' type='text/css' href='style.css'>
   </head>
 
 <br>
@@ -16,50 +17,60 @@
     <div class='images'>
     </div>
 </header>
+
 <section>
-    <form id = 'userInformation'>
-      <label for= 'storeName'>Store name:</label>
-      <input type= 'text' id='storeName'>
+<div class='header'>
 
-      <label for= 'storeMin'>Min Customers:</label>
-      <input type= 'text' id='storeMin'>
+    <form id='new store' action='' method='get' accept-charset='utf-8'>
+      <fieldset>
+<div>
+      <label for='storeName'>Store name:</label>
+      <input id='store'
+      placeholder='Store Name'
+      name='store'
+      type='text'>
+</div>
 
-      <label for= 'storeMax'>Max Customers:</label>
-      <input type= 'text' id='storeMax'>
+<div>
+      <label for='storeMin'>Min Customers:</label>
+      <input id='min'
+      placeholder='minimum'
+      name='min'
+      type='number'>
+</div>
 
+<div>
+      <label for='storeMax'>Max Customers:</label>
+      <input id='max'
+      placeholder='maximum'
+      name='max'
+      type='number'>
+</div>
+
+<div>
       <label for= 'storeAvg'>Avg Customers:</label>
-      <input tyoe= 'text' id='storeAvg'>
+      <input id='text'
+      placeholder='average'
+      name='avg'
+      type='number'>
+</div>
 
-      <button type= 'submit' id='submit'>Submit</button>
-    </form>
-  </section>
+<button type= 'submit' id='submit'>Submit</button>
+
+</fieldset>
+  </form>
+    </section>
+
+<section id='store data'></section>
 
 <p>Freshly caught daily. Best in the West!</p>
 
-<h2>Daily Sales</h2>
-<table id= "storeTable">
-<tr id= 'x'>
-  <th>Store Names</th>
-  <th colspan="8">Hourly Sales</th>
-  <th>Total Sales Per Hour</th>
-</tr>
-<tr id= 'y'>
-  <th id="z"></th>
-       <td>10a</td>
-       <td>11a</td>
-       <td>12p</td>
-       <td>1p</td>
-       <td>2p</td>
-       <td>3p</td>
-       <td>4p</td>
-       <td>5p</td>
-     </tr>
-   </table>
 <br>
 <br>
+
 <a href="http://www.karenscookies.net/Salmon-Cookie-Cutter_p_894.html">If you want to desgin your own cookies.</a>
 
 
-<script src='app.js' charset='utf-8'></script>
+<script src='app.js' type='text/javascript' charset='utf-8'></script>
 </body>
 </html>
