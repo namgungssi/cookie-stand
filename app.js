@@ -33,11 +33,11 @@ function renderTable(){
   var trElementOne = document.createElement('tr');
   var thElementTwo = document.createElement('th');
   thEl1.textContent = '';
-  trEl1.appendChild(thEl1);
+  trEl1.appendChild(thElementOne);
 
   for (var i = 0; i < hours.length; i++){
     thEltwo.textContent = hours[i];
-    trElone.appendChild(thEltwo);
+    trElone.appendChild(thElementTwo);
   }
 
   var thElementThree = document.createElement('th');
@@ -85,7 +85,7 @@ function renderNew(name, min, max, avg){
   }
 }
 
-document.getElementById('new store').addEventListener('submit', function(event){
+document.getElementById('new store').addEventListener('submit', function(event));{
   event.preventDefault();
   var exists = false;
   var store = event.target.store.value;
