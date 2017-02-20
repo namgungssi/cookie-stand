@@ -2,6 +2,50 @@ var hours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',];
 var shops = [];
 var table;
 
+var login = document.getElementById('login');
+var submit = document.getElementById('login-submit');
+var cancel = document.getElementById('login-cancel');
+
+var navElements = document.getElementsByClassName('navs');
+var navLogins = document.getElementsByClassName('nav-login');
+var navLinks = document.getElementsByClassName('links');
+
+login.addEventListener('click', function(event){
+  for (var i = 0; i < navElements.length; i++){
+    navElements[i].style.display = 'none';
+  }
+
+  for (var y = 0; y < navLogins.length; y++){
+    navLogins[j].style.display = 'inline-block';
+  }
+};
+
+cancel.addEventListener('click', function(event){
+  for (var i = 0; i < navElements.length; i++){
+    navElements[i].style.display = 'inline-block';
+  }
+
+  for (var y = 0; y < navLogins.length; y++){
+    navLogins[y].style.display = 'none';
+  }
+};
+
+submit.addEventListener('click', function(event){
+  event.preventDefault();
+
+  for (var i = 0; i < navLogins.length; i++){
+    navLogins[i].style.display = 'none';
+  }
+
+  for (var y = 0; y < navLinks.length; y++){
+    navLinks[y].style.display = 'inline-block';
+  }
+};
+
+
+
+
+
 function cookieShop(name, minCustomer, maxCustomer, avgCustomer){
   this.name = name;
   this.minCustomer = minCustomer;
