@@ -1,27 +1,28 @@
 var hours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',];
 var shops = [];
-var tbl;
+var table;
 
 function cookieShop(name, minCustomer, maxCustomer, avgCustomer){
   this.name = name;
   this.minCustomer = minCustomer;
-  this.maxCustomer = maxCutomer;
+  this.maxCustomer = maxCustomer;
   this.avgCustomer = avgCustomer;
   this.dailyCookies = 0;
   this.hourlyCookies = [];
+  this.id = name;
   shops.push(this);
 
 this.getHourly();
-renderStore(tbl, this);
+renderStore(this, table);
 }
 
-cookieShop.prototype.generateRandom = function(min, max){
+cookieShop.prototype.getRandom = function(min, max){
   return Math.random() * (max - min) + min;
 };
 
-cookieShop.prototype.generateHourly = function(){
+cookieShop.prototype.getHourly = function(){
   for (var i = 0; i < hours.length; i++){
-    var cookie = Math.floor(this.avgCustomer * this.generateRandom(this.minCustomer, this.maxCustomer));
+    var cookie = Math.floor(this.avgCustomer * this.getRandom(this.minCustomer, this.maxCustomer));
     this.hourlyCookies.push(cookie);
     this.dailyCookies += cookie;
   }
@@ -32,8 +33,8 @@ function renderTable(){
   tbl.id = 'table';
   var trElementOne = document.createElement('tr');
   var thElementTwo = document.createElement('th');
-  thEl1.textContent = '';
-  trEl1.appendChild(thElementOne);
+  thElone.textContent = '';
+  trElone.appendChild(thElementOne);
 
   for (var i = 0; i < hours.length; i++){
     thEltwo.textContent = hours[i];
@@ -46,11 +47,11 @@ function renderTable(){
 
   tbl.appendChild(trElementOne);
 
-  document.getElementById('store data').appendChild(tbl);
+  document.getElementById('store data').appendChild(table);
 }
 
 
-function renderStore(tbl, store){
+function renderStore(table, store){
   var trElementTwo = document.createElement('tr');
   var thElementFour = document.createElement('th');
   thElementFour.textContent = store.name;
@@ -67,22 +68,28 @@ function renderStore(tbl, store){
   tdElementTwo.textContent = store.dailyCookies;
   trElementTwo.appendChild(tdElementTwo);
 
-  tbl.appendChild(trElementTwo);
+  table.appendChild(trElementTwo);
 }
 
-function renderNew(name, min, max, avg){
+function renderNew(name, minimum, maximum, avgerage){
+  table = document.getElementById('table');
+  var shop = new cookieShop(name, minimum, maximum, average);
+}
+
+function renderUpdate(shop, minimum, maximum, average){
   var trElement = document.getElementById(shop.name);
 
   shop.minCustomer = min;
   shop.maxCustomer = max;
   shop.avgCustomer = avg;
-  shop.hourlyCookies = 0;
+  shop.hourlyCookies = [];
+  shop.dailyCookies = 0;
   shop.getHourly();
 
   for (var i = 0; i < shop.hourlyCookies.length; i++){
     trElement.childNodes[i + 1].textContent = shop.hourlyCookies[i];
-    trElement.childNodes[trElement.childNodes.length -1].textContent = shop.dailyCookies;
   }
+    trElement.childNodes[trElement.childNodes.length -1].textContent = shop.dailyCookies;
 }
 
 document.getElementById('new store').addEventListener('submit', function(event));{
@@ -92,6 +99,12 @@ document.getElementById('new store').addEventListener('submit', function(event))
   var min = parseInt(event.target.store.value);
   var max = parseInt(event.target.store.value);
   var avg = parseInt(evebt.target.store.value);
+
+  for (var i = 0; i < shops.length; i++){
+    if(shops[i].id === store){
+      exists = true;
+      break;
+  }
 }
 
 if (exists === true){
