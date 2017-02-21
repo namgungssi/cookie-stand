@@ -40,7 +40,6 @@ cookieShop.prototype.getHourly = function(){
   }
 }
 
-
 this.getHourly();{
 renderStore(this, table);
 }
@@ -150,9 +149,9 @@ document.getElementById('new store').addEventListener('submit', function(event))
   event.preventDefault();
   var exists = false;
   var store = event.target.store.value;
-  var min = parseInt(event.target.store.value);
-  var max = parseInt(event.target.store.value);
-  var avg = parseInt(evebt.target.store.value);
+  var min = parseInt(event.target.min.value);
+  var max = parseInt(event.target.max.value);
+  var avg = parseInt(evebt.target.avg.value);
 
   for (var i = 0; i < shops.length; i++){
     if(shops[i].id === store){
