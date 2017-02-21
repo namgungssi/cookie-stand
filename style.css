@@ -1,5 +1,5 @@
 body {
-  background: url("cookie-stand/background.jpg");
+  background-image: "desktop/201/cookie-stand/background.jpg");
   background-color: pink;
   text-align: center;
 }
@@ -67,4 +67,9 @@ form {
     display: block;
     margin-top: 0em;
     text-align: center;
+}
+
+images.resize{
+  width: 50px;
+  height: 50px;
 }
