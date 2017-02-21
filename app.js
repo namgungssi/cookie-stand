@@ -26,6 +26,26 @@ renderStore(this, table);
 }
 
 
+//customer
+cookieShop.prototype.getRandom = function(min, max){
+  return Math.random() * (max - min) + min;
+};
+
+//hourly cookies
+cookieShop.prototype.getHourly = function(){
+  for (var i = 0; i < hours.length; i++){
+    var cookie = Math.floor(this.avgCustomer * this.getRandom(this.minCustomer, this.maxCustomer));
+    this.hourlyCookies.push(cookie);
+    this.dailyCookies += cookie;
+  }
+};
+
+
+this.getHourly();
+renderStore(this, table);
+}
+
+
 login.addEventListener('click', function(event){
   for (var i = 0; i < navElements.length; i++){
     navElements[i].style.display = 'none';
@@ -59,25 +79,6 @@ submit.addEventListener('click', function(event){
     navLinks[y].style.display = 'inline-block';
   }
 };
-
-//customer
-cookieShop.prototype.getRandom = function(min, max){
-  return Math.random() * (max - min) + min;
-};
-
-//hourly cookies
-cookieShop.prototype.getHourly = function(){
-  for (var i = 0; i < hours.length; i++){
-    var cookie = Math.floor(this.avgCustomer * this.getRandom(this.minCustomer, this.maxCustomer));
-    this.hourlyCookies.push(cookie);
-    this.dailyCookies += cookie;
-  }
-};
-
-
-this.getHourly();
-renderStore(this, table);
-}
 
 //attempt at table
 function renderTable(){
