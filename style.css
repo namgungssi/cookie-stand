@@ -1,5 +1,12 @@
 body {
+  background: url("cookie-stand/background.jpg");
   background-color: pink;
+  text-align: center;
+}
+
+table {
+  text-align: center;
+  background-color: none;
 }
 
 td {
@@ -11,16 +18,31 @@ tr {
 }
 
 header {
-  background-color: salmon;
+  max-width: 100%;
   border-style: double;
-
 }
 
 p {
   font-size: 200%;
+  text-align: center;
 }
 
 title {
   position: relative;
   text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+    text-align: center;
 }
