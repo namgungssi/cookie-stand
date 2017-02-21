@@ -29,7 +29,7 @@ renderStore(this, table);
 //customer
 cookieShop.prototype.getRandom = function(min, max){
   return Math.random() * (max - min) + min;
-};
+}
 
 //hourly cookies
 cookieShop.prototype.getHourly = function(){
@@ -38,15 +38,14 @@ cookieShop.prototype.getHourly = function(){
     this.hourlyCookies.push(cookie);
     this.dailyCookies += cookie;
   }
-};
-
-
-this.getHourly();
-renderStore(this, table);
 }
 
 
-login.addEventListener('click', function(event){
+this.getHourly();{
+renderStore(this, table);
+}
+
+login.addEventListener('submit', function(event){
   for (var i = 0; i < navElements.length; i++){
     navElements[i].style.display = 'none';
   }
@@ -54,21 +53,9 @@ login.addEventListener('click', function(event){
   for (var y = 0; y < navLogins.length; y++){
     navLogins[j].style.display = 'inline-block';
   }
-};
+}
 
-
-cancel.addEventListener('click', function(event){
-  for (var i = 0; i < navElements.length; i++){
-    navElements[i].style.display = 'inline-block';
-  }
-
-  for (var y = 0; y < navLogins.length; y++){
-    navLogins[y].style.display = 'none';
-  }
-};
-
-
-submit.addEventListener('click', function(event){
+submit.addEventListener('submit', function(event){
   event.preventDefault();
 
   for (var i = 0; i < navLogins.length; i++){
@@ -78,7 +65,17 @@ submit.addEventListener('click', function(event){
   for (var y = 0; y < navLinks.length; y++){
     navLinks[y].style.display = 'inline-block';
   }
-};
+}
+
+cancel.addEventListener('submit', function(event){
+  for (var i = 0; i < navElements.length; i++){
+    navElements[i].style.display = 'inline-block';
+  }
+}
+  for (var y = 0; y < navLogins.length; y++){
+    navLogins[y].style.display = 'none';
+  }
+
 
 //attempt at table
 function renderTable(){
@@ -98,9 +95,7 @@ function renderTable(){
   var thElementThree = document.createElement('th');
   thElthree.textContent = 'Totals';
   trElone.appendChild(thElementThree);
-
   tbl.appendChild(trElementOne);
-
   document.getElementById('store data').appendChild(table);
 }
 
@@ -112,6 +107,7 @@ function renderStore(table, store){
   trElementTwo.id = store.id;
   trElementTwo.appendChild(thElementFour);
 
+//hours
   for (var y = 0; y < hours.length; y++){
     var tdElementOne = document.createElement('td');
     tdElementOne.textContent = store.hourlyCookies[y];
