@@ -2,6 +2,7 @@ body {
   background-image: "desktop/201/cookie-stand/background.jpg");
   background-color: pink;
   text-align: center;
+  font-weight: lighter;
 }
 
 table {
@@ -11,7 +12,8 @@ table {
   margin-bottom: .5rem;
   display: table;
   border-collapse: separate;
-  border-spacing: 2px;
+  border-spacing: 10px;
+  font-style: normal;
 }
 
 td {
@@ -20,10 +22,11 @@ td {
 }
 
 th {
-  font-size: 150%;
-  font-family: monospace;
-  font-style: oblique;
+  font-size: 125%;
+  font-family: fantasy;
+  font-style: normal;
   text-align: center;
+  font-weight: lighter;
 }
 
 tr {
@@ -34,14 +37,17 @@ header {
   max-width: 200%;
   border-style: double;
   text-align: center;
+  font-weight: lighter;
 }
 
 p {
   text-decoration: underline;
-  font-size: 200%;
-  font-family: monospace;
-  font-style: oblique;
+  font-size: 300%;
+  font-family: fantasy;
+  font-style: italic;
   text-align: center;
+  color: black;
+  font-weight: lighter;
 
 }
 
@@ -53,8 +59,8 @@ title {
 h1 {
   text-align: center;
   font-size: 300%;
-  font-family: monospace;
-  font-style: oblique;
+  font-family: fantasy;
+  font-style: normal;
   text-align: center;
 }
 
@@ -69,7 +75,25 @@ form {
     text-align: center;
 }
 
-images.resize{
-  width: 50px;
-  height: 50px;
+footer {
+  text-align: center;
+}
+
+img {
+  margin: 0px auto;
+  display: block;
+  max-width:400px;
+  max-height:400px;
+  width: 25%;
+  height: 25%;
+}
+
+#title-img {
+  margin: 0px auto;
+  display: block;
+  max-width:500%;
+  max-height:500px;
+  width: 50%;
+  height: 80%;
+
 }

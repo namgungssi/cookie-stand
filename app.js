@@ -25,7 +25,6 @@ this.getHourly();
 renderStore(this, table);
 }
 
-
 //customer
 cookieShop.prototype.getRandom = function(min, max){
   return Math.random() * (max - min) + min;
@@ -38,43 +37,7 @@ cookieShop.prototype.getHourly = function(){
     this.hourlyCookies.push(cookie);
     this.dailyCookies += cookie;
   }
-}
-
-this.getHourly();{
-renderStore(this, table);
-}
-
-login.addEventListener('submit', function(event){
-  for (var i = 0; i < navElements.length; i++){
-    navElements[i].style.display = 'none';
-  }
-
-  for (var y = 0; y < navLogins.length; y++){
-    navLogins[j].style.display = 'inline-block';
-  }
-}
-
-submit.addEventListener('submit', function(event){
-  event.preventDefault();
-
-  for (var i = 0; i < navLogins.length; i++){
-    navLogins[i].style.display = 'none';
-  }
-
-  for (var y = 0; y < navLinks.length; y++){
-    navLinks[y].style.display = 'inline-block';
-  }
-}
-
-cancel.addEventListener('submit', function(event){
-  for (var i = 0; i < navElements.length; i++){
-    navElements[i].style.display = 'inline-block';
-  }
-}
-  for (var y = 0; y < navLogins.length; y++){
-    navLogins[y].style.display = 'none';
-  }
-
+};
 
 //attempt at table
 function renderTable(){
@@ -166,12 +129,33 @@ if (exists === true){
   renderNew(store, min, max, avg);
 }
 
-
 event.target.store.value = null;
 event.target.min.value = null;
 event.target.min.value = null;
 event.target.avg.value = null;
 
+
+//button
+submit.addEventListener('submit', function(event){
+  event.preventDefault();
+
+  for (var i = 0; i < navLogins.length; i++){
+    navLogins[i].style.display = 'none';
+  }
+
+  for (var y = 0; y < navLinks.length; y++){
+    navLinks[y].style.display = 'inline-block';
+  }
+}
+
+cancel.addEventListener('submit', function(event){
+  for (var i = 0; i < navElements.length; i++){
+    navElements[i].style.display = 'inline-block';
+  }
+}
+  for (var y = 0; y < navLogins.length; y++){
+    navLogins[y].style.display = 'none';
+  }
 
 var pikePlace = new cookieShop('Pike Place', 17, 88, 5.2 'pike');
 var seaTac = new cookieShop('SeaTac Airport', 6, 44, 1.2 'seatac');
