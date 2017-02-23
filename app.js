@@ -28,7 +28,7 @@ renderStore(this, table);
 //customer
 cookieShop.prototype.getRandom = function(min, max){
   return Math.random() * (max - min) + min;
-}
+};
 
 //hourly cookies
 cookieShop.prototype.getHourly = function(){
@@ -42,7 +42,7 @@ cookieShop.prototype.getHourly = function(){
 //attempt at table
 function renderTable(){
   table = document.createElement('table');
-  tbl.id = 'table';
+  table.id = 'table';
   var trElementOne = document.createElement('tr');
   var thElementTwo = document.createElement('th');
   thElone.textContent = '';
@@ -52,12 +52,12 @@ function renderTable(){
     thEltwo.textContent = hours[i];
     trElone.appendChild(thElementTwo);
   }
-
+}
 
   var thElementThree = document.createElement('th');
   thElthree.textContent = 'Totals';
   trElone.appendChild(thElementThree);
-  tbl.appendChild(trElementOne);
+  table.appendChild(trElementOne);
   document.getElementById('store data').appendChild(table);
 }
 
@@ -76,13 +76,11 @@ function renderStore(table, store){
     tdElementOne.textContent = shops.hourlyCookies[i];
     trElementTwo.appendChild(tdElementOne);
   }
+    var tdElementTwo = document.createElement('td');
+    tdElementTwo.textContent = shops.dailyCookies;
+    trElementTwo.appendChild(tdElementTwo);
 
-
-  var tdElementTwo = document.createElement('td');
-  tdElementTwo.textContent = shops.dailyCookies;
-  trElementTwo.appendChild(tdElementTwo);
-
-  table.appendChild(trElementTwo);
+  // table.appendChild(trElementTwo);
 }
 
 
