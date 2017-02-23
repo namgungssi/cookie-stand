@@ -60,8 +60,9 @@ h1 {
   text-align: center;
   font-size: 300%;
   font-family: fantasy;
-  font-style: normal;
+  font-style: normal;;
   text-align: center;
+  font-weight: lighter;
 }
 
 #wrapper {

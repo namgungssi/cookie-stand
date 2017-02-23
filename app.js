@@ -68,17 +68,18 @@ function renderStore(table, store){
   thElementFour.textContent = store.name;
   trElementTwo.id = store.id;
   trElementTwo.appendChild(thElementFour);
+}
 
 //hours
-  for (var y = 0; y < hours.length; y++){
+  for (var i = 0; i < hours.length; i++){
     var tdElementOne = document.createElement('td');
-    tdElementOne.textContent = store.hourlyCookies[y];
+    tdElementOne.textContent = shops.hourlyCookies[i];
     trElementTwo.appendChild(tdElementOne);
   }
 
 
   var tdElementTwo = document.createElement('td');
-  tdElementTwo.textContent = store.dailyCookies;
+  tdElementTwo.textContent = shops.dailyCookies;
   trElementTwo.appendChild(tdElementTwo);
 
   table.appendChild(trElementTwo);
