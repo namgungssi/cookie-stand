@@ -116,7 +116,7 @@ document.getElementById('new store').addEventListener('submit', function(event))
   var avg = parseInt(evebt.target.avg.value);
 
   for (var i = 0; i < shops.length; i++){
-    if(shops[i].id === store){
+    if(shops[i].id === store()){
       exists = true;
       break;
   }
