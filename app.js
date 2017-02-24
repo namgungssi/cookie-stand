@@ -1,14 +1,6 @@
 var hours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',];
 var shops = [];
 var tbl;
-//
-// var login = document.getElementById('login');
-// var submit = document.getElementById('login-submit');
-// var cancel = document.getElementById('login-cancel');
-//
-// var navElements = document.getElementsByClassName('navs');
-// var navLogins = document.getElementsByClassName('nav-login');
-// var navLinks = document.getElementsByClassName('links');
 
 
 function cookieShop(name, minCustomer, maxCustomer, avgCustomer){
@@ -45,6 +37,7 @@ function renderTable(){
   tbl.id = 'table';
   var trElementOne = document.createElement('tr');
   var thElementTwo = document.createElement('th');
+  var thElementThree = document.createElement('tr');
   thElone.textContent = '';
   trElone.appendChild(thElementOne);
 
@@ -52,11 +45,11 @@ function renderTable(){
     thEltwo.textContent = hours[i];
     trElone.appendChild(thElementTwo);
   }
-}
+};
 
-  var thElementThree = document.createElement('th');
+  var thElementTwo = document.createElement('th');
   thElthree.textContent = 'Totals';
-  trElone.appendChild(thElementThree);
+  trElone.appendChild(thElementTwo);
 
   tbl.appendChild(trElementOne);
 
@@ -64,22 +57,24 @@ document.getElementById('store data').appendChild(tbl);
 
 
 function renderStore(tbl, store){
-  var trElementTwo = document.createElement('tr');
-  var thElementFour = document.createElement('th');
+  var trElementOne = document.createElement('tr');
+  var thElementTwo = document.createElement('th');
+  var thElementThree = document.createElement('th');
   thElementFour.textContent = store.name;
   trElementTwo.id = store.id;
-  trElementTwo.appendChild(thElementFour);
+  trElementTwo.appendChild(thElementThree);
 }
 
 //hours
-  for (var i = 0; i < hours.length; i++){
+  for (var j = 0; j < hours.length; j++){
     var tdElementOne = document.createElement('td');
-    tdElementOne.textContent = shops.hourlyCookies[i];
+    tdElementOne.textContent = shops.hourlyCookies[j];
     trElementTwo.appendChild(tdElementOne);
   }
     var tdElementTwo = document.createElement('td');
     tdElementTwo.textContent = shops.dailyCookies;
     trElementTwo.appendChild(tdElementTwo);
+
 
     tbl.appendChild(trElementTwo);
 
@@ -133,6 +128,7 @@ event.target.min.value = null;
 event.target.min.value = null;
 event.target.avg.value = null;
 
+form.addEventListener('submit');
 
 var pikePlace = new cookieShop('Pike Place', 17, 88, 5.2 'pike');
 var seaTac = new cookieShop('SeaTac Airport', 6, 44, 1.2 'seatac');
