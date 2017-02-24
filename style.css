@@ -95,5 +95,12 @@ img {
   max-height:500px;
   width: 65%;
   height: 90%;
+}
 
+h3 {
+  text-align: center;
+  font-size: 200%;
+  font-family: fantasy;
+  font-style: normal;;
+  font-weight: lighter;
 }
