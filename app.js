@@ -1,14 +1,14 @@
 var hours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',];
 var shops = [];
-var table;
-
-var login = document.getElementById('login');
-var submit = document.getElementById('login-submit');
-var cancel = document.getElementById('login-cancel');
-
-var navElements = document.getElementsByClassName('navs');
-var navLogins = document.getElementsByClassName('nav-login');
-var navLinks = document.getElementsByClassName('links');
+var tbl;
+//
+// var login = document.getElementById('login');
+// var submit = document.getElementById('login-submit');
+// var cancel = document.getElementById('login-cancel');
+//
+// var navElements = document.getElementsByClassName('navs');
+// var navLogins = document.getElementsByClassName('nav-login');
+// var navLinks = document.getElementsByClassName('links');
 
 
 function cookieShop(name, minCustomer, maxCustomer, avgCustomer){
@@ -25,11 +25,6 @@ this.getHourly();
 renderStore(this, table);
 }
 
-//customer
-cookieShop.prototype.getRandom = function(min, max){
-  return Math.random() * (max - min) + min;
-};
-
 //hourly cookies
 cookieShop.prototype.getHourly = function(){
   for (var i = 0; i < hours.length; i++){
@@ -39,10 +34,15 @@ cookieShop.prototype.getHourly = function(){
   }
 };
 
+//customer
+cookieShop.prototype.getRandom = function(min, max){
+  return Math.random() * (max - min) + min;
+};
+
 //attempt at table
 function renderTable(){
-  table = document.createElement('table');
-  table.id = 'table';
+  tbl = document.createElement('table');
+  tbl.id = 'table';
   var trElementOne = document.createElement('tr');
   var thElementTwo = document.createElement('th');
   thElone.textContent = '';
@@ -57,12 +57,13 @@ function renderTable(){
   var thElementThree = document.createElement('th');
   thElthree.textContent = 'Totals';
   trElone.appendChild(thElementThree);
-  table.appendChild(trElementOne);
-  document.getElementById('store data').appendChild(table);
-}
+
+  tbl.appendChild(trElementOne);
+
+document.getElementById('store data').appendChild(tbl);
 
 
-function renderStore(table, store){
+function renderStore(tbl, store){
   var trElementTwo = document.createElement('tr');
   var thElementFour = document.createElement('th');
   thElementFour.textContent = store.name;
@@ -80,12 +81,11 @@ function renderStore(table, store){
     tdElementTwo.textContent = shops.dailyCookies;
     trElementTwo.appendChild(tdElementTwo);
 
-  // table.appendChild(trElementTwo);
-}
+    tbl.appendChild(trElementTwo);
 
 
 function renderNew(name, minimum, maximum, avgerage){
-  table = document.getElementById('table');
+  tbl = document.getElementById('table');
   var shop = new cookieShop(name, minimum, maximum, average);
 }
 
@@ -100,7 +100,7 @@ function renderUpdate(shop, minimum, maximum, average){
   shop.dailyCookies = 0;
   shop.getHourly();
 
-  for (var i = 0; i < shop.hourlyCookies.length; i++){
+  for (var i = 0; i <shop.hourlyCookies.length; i++){
     trElement.childNodes[i + 1].textContent = shop.hourlyCookies[i];
   }
     trElement.childNodes[trElement.childNodes.length -1].textContent = shop.dailyCookies;
@@ -134,34 +134,17 @@ event.target.min.value = null;
 event.target.avg.value = null;
 
 
-//button
-submit.addEventListener('submit', function(event){
-  event.preventDefault();
-
-  for (var i = 0; i < navLogins.length; i++){
-    navLogins[i].style.display = 'none';
-  }
-
-  for (var y = 0; y < navLinks.length; y++){
-    navLinks[y].style.display = 'inline-block';
-  }
-}
-
-cancel.addEventListener('submit', function(event){
-  for (var i = 0; i < navElements.length; i++){
-    navElements[i].style.display = 'inline-block';
-  }
-}
-  for (var y = 0; y < navLogins.length; y++){
-    navLogins[y].style.display = 'none';
-  }
-
 var pikePlace = new cookieShop('Pike Place', 17, 88, 5.2 'pike');
 var seaTac = new cookieShop('SeaTac Airport', 6, 44, 1.2 'seatac');
 var southCenter = new cookieShop('Southcenter Mall', 11, 38, 1.9, 'southcenter');
 var bellevue = new cookieShop('Bellevue Square', 20, 48, 3.3, 'bellevue');
 var alki = new cookieShop('Alki Beach'), 3, 24, 2.6, 'alki');
 
+
+// //button
+// submit.addEventListener('submit', function(event){
+//   event.preventDefault();
+//
 
 
 // //locationList

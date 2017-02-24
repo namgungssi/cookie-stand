@@ -82,8 +82,8 @@ footer {
 img {
   margin: 0px auto;
   display: block;
-  max-width:400px;
-  max-height:400px;
+  max-width:500px;
+  max-height:500px;
   width: 25%;
   height: 25%;
 }
@@ -93,7 +93,7 @@ img {
   display: block;
   max-width:500%;
   max-height:500px;
-  width: 50%;
-  height: 80%;
+  width: 70%;
+  height: 90%;
 
 }
