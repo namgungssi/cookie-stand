@@ -11,72 +11,32 @@ function cookieShop(name, minCustomer, maxCustomer, avgCustomer){
   this.dailyCookies = 0;
   this.hourlyCookies = [];
   this.id = name;
+  this.getHourly();
   shops.push(this);
 
-this.getHourly();
-renderStore(this, table);
+  renderStore(this, table);
 }
 
 //hourly cookies
 cookieShop.prototype.getHourly = function(){
-  for (var i = 0; i < hours.length; i++){
+  for (var x = 0; x < hours.length; x++){
     var cookie = Math.floor(this.avgCustomer * this.getRandom(this.minCustomer, this.maxCustomer));
     this.hourlyCookies.push(cookie);
     this.dailyCookies += cookie;
+
   }
 };
-
-//customer
-cookieShop.prototype.getRandom = function(min, max){
-  return Math.random() * (max - min) + min;
-};
-
-//attempt at table
-function renderTable(){
-  tbl = document.createElement('table');
-  tbl.id = 'table';
-  var trElementOne = document.createElement('tr');
-  var thElementTwo = document.createElement('th');
-  var thElementThree = document.createElement('tr');
-  thElone.textContent = '';
-  trElone.appendChild(thElementOne);
-
-  for (var i = 0; i < hours.length; i++){
-    thEltwo.textContent = hours[i];
-    trElone.appendChild(thElementTwo);
-  }
-};
-
-  var thElementTwo = document.createElement('th');
-  thElthree.textContent = 'Totals';
-  trElone.appendChild(thElementTwo);
-
-  tbl.appendChild(trElementOne);
-
-document.getElementById('store data').appendChild(tbl);
-
-
-function renderStore(tbl, store){
-  var trElementOne = document.createElement('tr');
-  var thElementTwo = document.createElement('th');
-  var thElementThree = document.createElement('th');
-  thElementFour.textContent = store.name;
-  trElementTwo.id = store.id;
-  trElementTwo.appendChild(thElementThree);
-}
 
 //hours
-  for (var j = 0; j < hours.length; j++){
-    var tdElementOne = document.createElement('td');
-    tdElementOne.textContent = shops.hourlyCookies[j];
-    trElementTwo.appendChild(tdElementOne);
-  }
-    var tdElementTwo = document.createElement('td');
-    tdElementTwo.textContent = shops.dailyCookies;
-    trElementTwo.appendChild(tdElementTwo);
-
-
-    tbl.appendChild(trElementTwo);
+for (var y = 0; y < hours.length; y++){
+  var tdElone = document.createElement('td');
+  tdElone.textContent = shops.hourlyCookies[y];
+  trEltwo.appendChild(tdElone);
+}
+var tdEltwo = document.createElement('td');
+tdEltwo.textContent = shops.dailyCookies;
+trEltwo.appendChild(tdEltwo);
+tbl.appendChild(trEltwo);
 
 
 function renderNew(name, minimum, maximum, avgerage){
@@ -84,6 +44,10 @@ function renderNew(name, minimum, maximum, avgerage){
   var shop = new cookieShop(name, minimum, maximum, average);
 }
 
+//customer
+cookieShop.prototype.getRandom = function(min, max){
+  return Math.random() * (max - min) + min;
+}
 
 function renderUpdate(shop, minimum, maximum, average){
   var trElement = document.getElementById(shop.name);
@@ -95,46 +59,84 @@ function renderUpdate(shop, minimum, maximum, average){
   shop.dailyCookies = 0;
   shop.getHourly();
 
-  for (var i = 0; i <shop.hourlyCookies.length; i++){
-    trElement.childNodes[i + 1].textContent = shop.hourlyCookies[i];
+  for (var x = 0; x <shop.hourlyCookies.length; x++){
+    trElement.childNodes[x + 1].textContent = shop.hourlyCookies[x];
   }
-    trElement.childNodes[trElement.childNodes.length -1].textContent = shop.dailyCookies;
+  trElement.childNodes[trElement.childNodes.length -1].textContent = shop.dailyCookies;
 }
 
-
-document.getElementById('new store').addEventListener('submit', function(event));{
+function addStore(event){
   event.preventDefault();
-  var exists = false;
+  console.log(event);
+
   var store = event.target.store.value;
   var min = parseInt(event.target.min.value);
   var max = parseInt(event.target.max.value);
   var avg = parseInt(evebt.target.avg.value);
 
-  for (var i = 0; i < shops.length; i++){
-    if(shops[i].id === store()){
-      exists = true;
-      break;
-  }
+  var newCookieShop = new cookieShop (store, min, max, avg);
+  newCookieShop.renderCookiesPerHour();
+  newCookieShop.alternate();
+
+  event.target.store.value = null;
+  event.target.min.value = null;
+  event.target.min.value = null;
+  event.target.avg.value = null;
+
+  var totalStore = document.getElementById('total store');
+  totalStore.getTotal();
+
+  var form = document.getElementById('total store');
+  form.addEventListener('submit', 'addStore');
+};
+
+//attempt at table
+function renderTable(){
+  tbl = document.createElement('table');
+  tbl.id = 'table';
+  var trElone = document.createElement('th');
+  var thEltwo = document.createElement('tr');
+  var thElthree = document.createElement('tr');
+  thElone.textContent = '';
+  trElone.appendChild(thElone);
+
+  for (var x = 0; x < hours.length; x++){
+    thEltwo.textContent = hours[x];
+    trEltwo.appendChild(thEltwo);
+
+
+var thEltwo = document.createElement('tr');
+thElthree.textContent = 'Totals';
+trEltwo.appendChild(thEltwo);
+tbl.appendChild(trElone);
+
+document.getElementById('store data').appendChild(tbl);
+}
 }
 
-if (exists === true){
-  renderUpdate(shops[i], min, max, avg);
-}else{
-  renderNew(store, min, max, avg);
-}
-
-event.target.store.value = null;
-event.target.min.value = null;
-event.target.min.value = null;
-event.target.avg.value = null;
-
-form.addEventListener('submit');
+function renderStore(tbl, store){
+  var trElone = document.createElement('th');
+  var thEltwo = document.createElement('tr');
+  var thElthree = document.createElement('tr');
+  thElthree.textContent = store.name;
+  trEltwo.id = store.id;
+  trEltwo.appendChild(thElthree);
+};
 
 var pikePlace = new cookieShop('Pike Place', 17, 88, 5.2 'pike');
+pikePlace.renderCookiesPerHour();
+
 var seaTac = new cookieShop('SeaTac Airport', 6, 44, 1.2 'seatac');
+seaTac.renderCookiesPerHour();
+
 var southCenter = new cookieShop('Southcenter Mall', 11, 38, 1.9, 'southcenter');
+southCenter.renderCookiesPerHour();
+
 var bellevue = new cookieShop('Bellevue Square', 20, 48, 3.3, 'bellevue');
+bellevue.renderCookiesPerHour();
+
 var alki = new cookieShop('Alki Beach'), 3, 24, 2.6, 'alki');
+alki.renderCookiesPerHour();
 
 
 // //button
