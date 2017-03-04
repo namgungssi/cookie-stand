@@ -87,10 +87,10 @@ function addStore(event){
 
   var totalStore = document.getElementById('total store');
   totalStore.getTotal();
-
+  
 //event listener
   var form = document.getElementById('total store');
-  form.addEventListener.create('submit', 'addStore');
+  form.addEventListener.create('submit', 'addStore', 'max', 'min', 'avg');
 };
 
 //attempt at table using listner & handler
