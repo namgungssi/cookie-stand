@@ -87,12 +87,13 @@ function addStore(event){
 
   var totalStore = document.getElementById('total store');
   totalStore.getTotal();
+
 //event listener
   var form = document.getElementById('total store');
-  form.addEventListener('submit', 'addStore');
+  form.addEventListener.create('submit', 'addStore');
 };
 
-//attempt at table
+//attempt at table using listner & handler
 function renderTable(){
   tbl = document.createElement('table');
   tbl.id = 'table';
@@ -142,6 +143,7 @@ var alki = new cookieShop('Alki Beach'), 3, 24, 2.6, 'alki');
 alki.renderCookiesPerHour();
 
 
+EventHandler.create(EventListener.class, 'form', 'addStore');
 // //button
 // submit.addEventListener('submit', function(event){
 //   event.preventDefault();
