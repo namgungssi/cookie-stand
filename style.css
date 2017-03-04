@@ -101,8 +101,8 @@ h3 {
   text-align: center;
   font-size: 200%;
   font-family: fantasy;
-  font-style: normal;;
   font-weight: lighter;
+  font-style: italic;
 }
 
 fieldset {
@@ -110,4 +110,8 @@ fieldset {
   border-radius: 10px;
   border-spacing: 5px;
   border-color: white;
+}
+
+social-links {
+  display: inline-block;
 }

@@ -87,8 +87,8 @@ function addStore(event){
 
   var totalStore = document.getElementById('total store');
   totalStore.getTotal();
-  
-//event listener
+
+  //event listener
   var form = document.getElementById('total store');
   form.addEventListener.create('submit', 'addStore', 'max', 'min', 'avg');
 };
@@ -108,13 +108,13 @@ function renderTable(){
     trEltwo.appendChild(thEltwo);
 
 
-var thEltwo = document.createElement('tr');
-thElthree.textContent = 'Totals';
-trEltwo.appendChild(thEltwo);
-tbl.appendChild(trElone);
+    var thEltwo = document.createElement('tr');
+    thElthree.textContent = 'Totals';
+    trEltwo.appendChild(thEltwo);
+    tbl.appendChild(trElone);
 
-document.getElementById('store data').appendChild(tbl);
-}
+    document.getElementById('store data').appendChild(tbl);
+  }
 }
 
 function renderStore(tbl, store){
@@ -169,52 +169,52 @@ EventHandler.create(EventListener.class, 'form', 'addStore');
 
 /*Lab 06
 var pikePlace = {
-  min : 17,
-  max : 88,
-  avg : 5.2,
-  getRandom: function(min, max){
-    returnMath.random() * (max - min) + min;
-  }
+min : 17,
+max : 88,
+avg : 5.2,
+getRandom: function(min, max){
+returnMath.random() * (max - min) + min;
+}
 }
 pikePlace.getRandom(pikePlace.min, pikePlace.max);
 
 var seaTac = {
-  min: 6,
-  max: 24,
-  avg: 1.2,
-  getRandom: function(min, max){
-    returnMath.random() * (max - min) + min;
-  }
+min: 6,
+max: 24,
+avg: 1.2,
+getRandom: function(min, max){
+returnMath.random() * (max - min) + min;
+}
 }
 seaTac.getRandom(seaTac.min, seaTac.max);
 
 var southCenter = {
-  min: 11,
-  max: 38,
-  avg: 1.9
-  getRandom: function(min, max){
-    returnMath.random() * (max - min) + min;
-  }
+min: 11,
+max: 38,
+avg: 1.9
+getRandom: function(min, max){
+returnMath.random() * (max - min) + min;
+}
 }
 southCenter.getRandom(southCenter.min, southCenter.max);
 
 var bellevue = {
-  min: 20,
-  max: 48,
-  avg: 3.3,
-  getRandom: function(min, max){
-    returnMath.random() * (max - min) + min;
-  }
+min: 20,
+max: 48,
+avg: 3.3,
+getRandom: function(min, max){
+returnMath.random() * (max - min) + min;
+}
 }
 bellevue.getRandom(bellevue.min, bellevue.max);
 
 var alki = {
-  min: 3,
-  max: 48,
-  avg: 2.6,
-  getRandom: function(min, max){
-    returnMath.random() * (max - min) + min;
-  }
+min: 3,
+max: 48,
+avg: 2.6,
+getRandom: function(min, max){
+returnMath.random() * (max - min) + min;
+}
 }
 alki.getRandom(alki.min, alki.max);
 /*
