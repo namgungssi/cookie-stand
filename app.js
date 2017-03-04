@@ -1,9 +1,10 @@
+//object literals
 var hours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',];
 var shops = [];
 var tbl;
 
-
-function cookieShop(name, minCustomer, maxCustomer, avgCustomer){
+//constructor
+function CookieShop(name, minCustomer, maxCustomer, avgCustomer){
   this.name = name;
   this.minCustomer = minCustomer;
   this.maxCustomer = maxCustomer;
@@ -46,7 +47,7 @@ function renderNew(name, minimum, maximum, avgerage){
 
 //customer
 cookieShop.prototype.getRandom = function(min, max){
-  return Math.random() * (max - min) + min;
+  return Math.random(Math.random() * (max - min) + min;
 }
 
 function renderUpdate(shop, minimum, maximum, average){
@@ -65,6 +66,7 @@ function renderUpdate(shop, minimum, maximum, average){
   trElement.childNodes[trElement.childNodes.length -1].textContent = shop.dailyCookies;
 }
 
+//from my object loterals
 function addStore(event){
   event.preventDefault();
   console.log(event);
@@ -123,6 +125,7 @@ function renderStore(tbl, store){
   trEltwo.appendChild(thElthree);
 };
 
+//object literals
 var pikePlace = new cookieShop('Pike Place', 17, 88, 5.2 'pike');
 pikePlace.renderCookiesPerHour();
 
